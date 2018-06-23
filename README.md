@@ -3,4 +3,8 @@ MastodonWatch
 
 MastodonのTootをストリーミングで取得してフィルタリングして監視するやつ。
 
-<a href='javascript:(function(){window.open("https://eai04191.github.io/MastodonWatch","mastodonWatch","width=310,height=1000");})()' id="bmlink">bookmarklet</a>
+## bookmarklet
+
+tokenを変更して下さい。
+
+`javascript:(function(){window.open("https://eai04191.github.io/mastodon-watch?token=xxx","mastodonWatch","width=310,height=1000");})()`
