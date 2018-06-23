@@ -3,7 +3,7 @@
 
 function getOption() {
   const instance = "mstdn.jp";
-  const token = decodeURIComponent(location.search.match(/lang=(.*?)(&|$)/)[1]);
+  const token = decodeURIComponent(location.search.match(/token=(.*?)(&|$)/)[1]);
 
   const searchRegExp = /crypko|くりぷ(こ|子)|クリプ(コ|子)/gi;
 
@@ -24,7 +24,7 @@ function update(text) {
 }
 
 function connect(instance, token, searchRegExp, testModeFlag) {
-  let ws = new WebSocket(`ws://${instance}/api/v1/streaming?access_token=${token}&stream=public`);
+  let ws = new WebSocket(`https://${instance}/api/v1/streaming?access_token=${token}&stream=public`);
 
   ws.onopen = function () {
     update("Connected.");
