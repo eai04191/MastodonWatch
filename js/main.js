@@ -1,6 +1,6 @@
 function getOption() {
   const instance = "mstdn.jp";
-  const token = decodeURIComponent(location.search.match(/token=(.*?)(&|$)/)[1]);
+  const token = decodeURIComponent(window.location.search.match(/token=(.*?)(&|$)/)[1]);
 
   const searchRegExp = /crypko|くりぷ(こ|子)|クリプ(コ|子)/gi;
 
@@ -49,8 +49,8 @@ function connect(instance, token, searchRegExp, testModeFlag) {
         const div = document.getElementById("articles-container");
 
         const iconHtml = `<a href="${toot.account.url}" target="_blank" ><img src="${toot.account.avatar}" class="icon"></a>`;
-        const nameHtml =          `<a href="${toot.account.url}" target="_blank" class="name">${toot.account.display_name}<span class="username">${toot.account.username}@${toot.account.url.match(/https:\/\/(.*?)\//)[1]}</span></a>`;
-        const timeHtml = `<a href="${toot.url}" class="time" target="_blank">${moment(toot.created_at).format("h:mm") }</a>`;
+        const nameHtml = `<a href="${toot.account.url}" target="_blank" class="name">${toot.account.display_name}<span class="username">${toot.account.username}@${toot.account.url.match(/https:\/\/(.*?)\//)[1]}</span></a>`;
+        const timeHtml = `<a href="${toot.url}" class="time" target="_blank">${moment(toot.created_at).format("h:mm")}</a>`;
         const contentHtml = `<div class="text">${toot.content}</div>`;
         div.innerHTML = `<article><header>${iconHtml}${nameHtml}${timeHtml}</header>${contentHtml}</article>${div.innerHTML}`;
       }
