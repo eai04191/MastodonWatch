@@ -1,0 +1,146 @@
+html {
+  height: 100%;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #292f33;
+  line-height: 1.28578;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+a {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.container__column.first {
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.container__column {
+  background-color: #222426;
+  font-size: 1rem;
+  white-space: normal;
+  border: 1px solid #303236;
+  border: 1px solid #aaa;
+  flex: 1;
+  min-width: 312px;
+  max-width: 312px;
+}
+
+.column {
+  height: 100%;
+  width: 310px;
+  background-color: #fff;
+  font-size: 1rem;
+  white-space: normal;
+  /* border: 1px solid #303236; */
+  /* margin: 30px auto; */
+}
+
+#articles-container {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: calc(100% - 50px) !important;
+}
+
+.column>header {
+  position: relative;
+  height: 50px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: inherit;
+  background-color: #f5f8fa;
+  line-height: 50px;
+  border-bottom: 1px solid #e1e8ed;
+  color: #292f33;
+  text-align: center;
+}
+
+.column>header>.title {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+article {
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px #e1e8ed solid;
+  font-size: 0.8rem;
+  padding-left: 58px;
+  line-height: 1.28578em;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+article header {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  flex: 1 1 auto;
+  line-height: 1;
+  font-weight: 700;
+  color: #292f33;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: normal;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.username {
+  font-size: .7rem;
+  color: #8899a6;
+}
+
+.time {
+  line-height: 1;
+  flex-shrink: 0;
+  color: #8899a6;
+  text-decoration: none;
+}
+
+.icon {
+  position: absolute;
+  border-radius: 10%;
+  margin-left: -46px;
+  width: 36px;
+  height: 36px;
+}
+
+.text p {
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+
+.js-media-preview-container {
+  width: 100%;
+  height: 130px;
+  border-radius: 3px;
+  z-index: 1;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
