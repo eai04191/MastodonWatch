@@ -1,8 +1,9 @@
 "use strict";
 
+
 function getOption() {
   const instance = "mstdn.jp";
-  const token = "xxx";
+  const token = decodeURIComponent(location.search.match(/lang=(.*?)(&|$)/)[1]);
 
   const searchRegExp = /crypko|くりぷ(こ|子)|クリプ(コ|子)/gi;
 
