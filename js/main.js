@@ -24,7 +24,7 @@ function update(text) {
 }
 
 function connect(instance, token, searchRegExp, testModeFlag) {
-  let ws = new WebSocket(`https://${instance}/api/v1/streaming?access_token=${token}&stream=public`);
+  let ws = new WebSocket(`wss://${instance}/api/v1/streaming?access_token=${token}&stream=public`);
 
   ws.onopen = function () {
     update("Connected.");
