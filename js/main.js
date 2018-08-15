@@ -1,6 +1,5 @@
 function getOption() {
   const instance = "mstdn.jp";
-  const token = decodeURIComponent(window.location.search.match(/token=(.*?)(&|$)/)[1]);
 
   const searchRegExp = /crypko|くりぷ(こ|子)|クリプ(コ|子)/gi;
 
@@ -8,7 +7,6 @@ function getOption() {
   const testModeFlag = false;
   return {
     instance,
-    token,
     searchRegExp,
     testModeFlag,
   };
@@ -20,8 +18,8 @@ function update(text) {
   div.innerHTML = `<article>${content}</article>${div.innerHTML}`;
 }
 
-function connect(instance, token, searchRegExp, testModeFlag) {
-  const ws = new WebSocket(`wss://${instance}/api/v1/streaming?access_token=${token}&stream=public`);
+function connect(instance, searchRegExp, testModeFlag) {
+  const ws = new WebSocket(`wss://${instance}/api/v1/streaming?stream=public`);
 
   ws.onopen = function onopen() {
     update("Connected.");
@@ -59,4 +57,4 @@ function connect(instance, token, searchRegExp, testModeFlag) {
 }
 
 const option = getOption();
-connect(option.instance, option.token, option.searchRegExp, option.testModeFlag);
+connect(option.instance, option.searchRegExp, option.testModeFlag);
